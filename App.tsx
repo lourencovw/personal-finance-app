@@ -1,25 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState } from 'react';
 import Routes from './src/routes';
-import { StyleSheet, Text, View } from 'react-native';
+
+import * as Font from 'expo-font';
+import { AppLoading } from 'expo';
+
+const fetchFonts = () => {
+  return Font.loadAsync({
+    'custom-font': require('./src/assets/fonts/wv.ttf'),
+    'custom-font-two': require('./src/assets/fonts/Montserrat-Thin.ttf'),
+    'custom-font-three': require('./src/assets/fonts/Comfortaa-VariableFont_wght.ttf'),
+    'custom-font-four': require('./src/assets/fonts/MAXWELL_BOLD.ttf'),
+    'montserrat-italic': require('./src/assets/fonts/Montserrat-MediumItalic.ttf')
+  });
+};
 
 export default function App() {
+  const [dataLoaded, setDataLoaded] = useState(false);
+
+  if (!dataLoaded) {
+    return (
+      <AppLoading startAsync={fetchFonts} onFinish={() => setDataLoaded(true)} />
+    )
+  }
   return (
-    <Routes/>
+    <Routes />
   );
-  // return (
-  //   <View style={styles.container}>
-  //     <Text>Open up App.tsx to start working on your app!</Text>
-  //     <StatusBar style="auto" />
-  //   </View>
-  // );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
