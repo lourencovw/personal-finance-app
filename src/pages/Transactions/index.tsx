@@ -63,7 +63,7 @@ export default function Transactions() {
         alert("Esse botão não possui ação")
     }
 
-    function pickColor(status) {
+    function pickColor(status: string) {
         switch (status) {
             case "approved":
                 return "#9effb8"
