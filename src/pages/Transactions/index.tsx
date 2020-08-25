@@ -112,6 +112,8 @@ export default function Transactions() {
                             onValueChange={noActionButton}
                             placeholder={{
                             }}
+
+                            useNativeAndroidPickerStyle={false}
                             items={[
                                 { label: '1 week', value: 'week', key: 11 },
                                 { label: '1 day', value: 'day', key: 10 },

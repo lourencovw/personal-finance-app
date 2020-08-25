@@ -3,6 +3,8 @@ import Routes from './src/routes';
 
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
+import 'intl';
+import 'intl/locale-data/jsonp/en-US';
 
 const fetchFonts = () => {
   return Font.loadAsync({

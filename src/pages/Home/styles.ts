@@ -25,7 +25,7 @@ export default StyleSheet.create({
         paddingRight: 24
     },
     currentBalanceContainer: {
-        flex: 0.12,
+        flex: 0.15,
         justifyContent: 'space-around',
         alignItems: 'flex-start',
         paddingLeft: 20,
@@ -40,7 +40,9 @@ export default StyleSheet.create({
         shadowOffset: { width: 0, height: 1 },
         shadowOpacity: 0.5,
         shadowRadius: 2,
-        elevation: 5
+        elevation: 5,
+
+        zIndex: 10
     },
     blueBanner: {
         flex: 0.2,
@@ -51,7 +53,8 @@ export default StyleSheet.create({
         paddingTop: 10,
         paddingBottom: 20,
         paddingLeft: 30,
-        marginLeft: 20
+        marginLeft: 20,
+        zIndex: 2
     },
     income: {
         flex: 1,

@@ -14,7 +14,7 @@ import { useNavigation } from '@react-navigation/native';
 export default function Home() {
     const [timePicker, setTimePicker] = useState('week');
     const navigation = useNavigation();
-    
+
     const width = Dimensions.get('window').width;
 
     let august = Array(31).fill({ income: 0, spending: 0 });
@@ -115,6 +115,7 @@ export default function Home() {
                         onValueChange={(value) => setTimePicker(value)}
                         placeholder={{
                         }}
+                        useNativeAndroidPickerStyle={false}
                         items={[
                             { label: '1 week', value: 'week', key: 11 },
                             { label: '1 day', value: 'day', key: 10 },
